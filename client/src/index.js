@@ -1,5 +1,5 @@
 import React from 'react';
-import  ReactDOM  from 'react-dom';
+import  * as ReactDOM  from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { applyMiddleware, compose } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
@@ -12,5 +12,10 @@ const store = configureStore({reducer: giantReducer}, compose(applyMiddleware(th
 
 console.log(store.getState);
 
-ReactDOM.render(
-    <Provider store={store}><App /></Provider>, document.getElementById('root'));
+//React 18
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(<Provider store = {store}> <App/> </Provider>);
+
+//React Legacy versions
+//ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
