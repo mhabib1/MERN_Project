@@ -7,7 +7,6 @@ import thunk from 'redux-thunk';
 import App from './App';
 
 import { giantReducer } from './reducers';
-console.log(giantReducer);
 const store = configureStore({reducer: giantReducer}, compose(applyMiddleware(thunk)));
 
 console.log(store.getState);

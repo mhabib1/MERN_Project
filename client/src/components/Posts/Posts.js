@@ -4,11 +4,11 @@ import useStyles from './styles'
 import { useSelector } from 'react-redux';
 
 const Posts = () => {
-    const post = useSelector((state) => state.posts);
+    const posts = useSelector((state) => state.posts);
     const classes = useStyles();
-    console.log(post);
+    console.log(posts); 
     return (
-        <React.Fragment className={classes.something}>
+        <React.Fragment>
         <Post/>
         <Post/>
         </React.Fragment>
